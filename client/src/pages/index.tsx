@@ -7,10 +7,7 @@ function index() {
   useEffect(() => {
     axios
       .get("http://localhost:8080")
-      .then((res) => {
-        console.log(res.data);
-        setMessage(res.data.message);
-      })
+      .then((res) => setMessage(res.data.message))
       .catch((err) => console.log("Error: ", err));
   }, []);
 
