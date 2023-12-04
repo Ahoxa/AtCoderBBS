@@ -1,11 +1,13 @@
-
-import express from 'express';
+import express from "express";
+import cors from "cors";
 
 const app = express();
 const PORT = 8080;
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello World!' });
+app.use(cors());
+
+app.get("/", (req, res) => {
+  res.json({ message: "Hello World!" });
 });
 
 app.listen(PORT, () => {
