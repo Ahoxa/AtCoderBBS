@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { Button } from "@/components/ui/button";
+
 function index() {
   const [message, setMessage] = useState("Loading");
 
@@ -11,7 +13,12 @@ function index() {
       .catch((err) => console.log("Error: ", err));
   }, []);
 
-  return <div>{message}</div>;
+  return (
+    <div>
+      <div>{message}</div>
+      <Button variant="outline">Click Me</Button>
+    </div>
+  );
 }
 
 export default index;
